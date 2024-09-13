@@ -24,5 +24,9 @@ dotEnv.config()
  app.use('/product',productRoutes)
  app.use('/uploads',express.static('uploads'));
 //server port number 
-app.listen(5000)
+app.listen( process.env.PORT||5000)
 console.log("server started:portnumber:=>5000")
+
+app.use('/',(req,res)=>{
+    res.send('<h1>welcome</h1>')
+})
