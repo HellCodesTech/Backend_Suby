@@ -3,6 +3,7 @@ const express=require('express')
 const dotEnv=require('dotenv')
 const mongoose=require('mongoose');
 const bodyparser=require('body-parser')
+const cors=require('cors')
 //imports routes
 const vendorRuotes=require('./routes/vendorRoutes')
 const firmRoutes=require('./routes/firmRoutes')
@@ -11,6 +12,7 @@ const path=require('path')
 //
 const app=express();
 dotEnv.config()
+app.use(cors())
 
 
 //data base connection
